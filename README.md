@@ -1,5 +1,7 @@
 # App Review Analyser: Kuku FM & Kuku TV
 
+**Live dashboard:** https://kuku-review-analyser.streamlit.app/
+
 **Problem:** teams can't read thousands of app reviews, so common complaints get missed.
 
 **What this does:** it pulls public Google Play reviews of Kuku FM (audio stories) and Kuku TV (video microdramas). Claude sorts each review into a topic, the topics are ranked by how often they come up and how serious they are, and real reviews are shown as evidence. Reviews it can't read clearly are marked "unclear" instead of guessed, and the AI's labels are checked against a hand-labelled sample.
