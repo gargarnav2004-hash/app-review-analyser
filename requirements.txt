@@ -1,0 +1,7 @@
+google-play-scraper
+anthropic
+python-dotenv
+pyyaml
+pandas
+streamlit
+plotly

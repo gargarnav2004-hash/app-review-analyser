@@ -1,0 +1,802 @@
+{
+ "run": "v1",
+ "model": "claude-haiku-5-5",
+ "taxonomy_version": "v1",
+ "unclear_rule": "both",
+ "confidence_threshold": 0.6,
+ "n_reviews": 60,
+ "classifier_failures": 0,
+ "overall_agreement": 0.8,
+ "agreement_when_ai_not_unclear": 0.784,
+ "ai_unclear_total": 9,
+ "ai_unclear_by_model": 7,
+ "ai_unclear_by_threshold": 2,
+ "arnav_unclear_total": 12,
+ "severity_exact": 0.958,
+ "severity_within_1": 1.0,
+ "per_topic": [
+  {
+   "topic": "autopay",
+   "arnav_count": 12,
+   "ai_count": 12,
+   "both_agree": 12,
+   "precision": 1.0,
+   "recall": 1.0
+  },
+  {
+   "topic": "technical",
+   "arnav_count": 1,
+   "ai_count": 4,
+   "both_agree": 1,
+   "precision": 0.25,
+   "recall": 1.0
+  },
+  {
+   "topic": "unique_problems",
+   "arnav_count": 4,
+   "ai_count": 0,
+   "both_agree": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "topic": "quality",
+   "arnav_count": 1,
+   "ai_count": 2,
+   "both_agree": 1,
+   "precision": 0.5,
+   "recall": 1.0
+  },
+  {
+   "topic": "customer_support",
+   "arnav_count": 0,
+   "ai_count": 0,
+   "both_agree": 0,
+   "precision": null,
+   "recall": null
+  },
+  {
+   "topic": "ads",
+   "arnav_count": 4,
+   "ai_count": 5,
+   "both_agree": 4,
+   "precision": 0.8,
+   "recall": 1.0
+  },
+  {
+   "topic": "language",
+   "arnav_count": 0,
+   "ai_count": 0,
+   "both_agree": 0,
+   "precision": null,
+   "recall": null
+  },
+  {
+   "topic": "suggestion",
+   "arnav_count": 3,
+   "ai_count": 6,
+   "both_agree": 2,
+   "precision": 0.33,
+   "recall": 0.67
+  },
+  {
+   "topic": "praise",
+   "arnav_count": 22,
+   "ai_count": 22,
+   "both_agree": 20,
+   "precision": 0.91,
+   "recall": 0.91
+  },
+  {
+   "topic": "other",
+   "arnav_count": 1,
+   "ai_count": 0,
+   "both_agree": 0,
+   "precision": null,
+   "recall": 0.0
+  },
+  {
+   "topic": "unclear",
+   "arnav_count": 12,
+   "ai_count": 9,
+   "both_agree": 8,
+   "precision": 0.89,
+   "recall": 0.67
+  }
+ ],
+ "confusion_matrix": {
+  "ads": {
+   "ads": 4,
+   "autopay": 0,
+   "other": 0,
+   "praise": 0,
+   "quality": 0,
+   "suggestion": 1,
+   "technical": 0,
+   "unclear": 0,
+   "unique_problems": 0
+  },
+  "autopay": {
+   "ads": 0,
+   "autopay": 12,
+   "other": 0,
+   "praise": 0,
+   "quality": 0,
+   "suggestion": 0,
+   "technical": 0,
+   "unclear": 0,
+   "unique_problems": 0
+  },
+  "praise": {
+   "ads": 0,
+   "autopay": 0,
+   "other": 0,
+   "praise": 20,
+   "quality": 0,
+   "suggestion": 0,
+   "technical": 0,
+   "unclear": 1,
+   "unique_problems": 1
+  },
+  "quality": {
+   "ads": 0,
+   "autopay": 0,
+   "other": 0,
+   "praise": 0,
+   "quality": 1,
+   "suggestion": 0,
+   "technical": 0,
+   "unclear": 0,
+   "unique_problems": 1
+  },
+  "suggestion": {
+   "ads": 0,
+   "autopay": 0,
+   "other": 1,
+   "praise": 1,
+   "quality": 0,
+   "suggestion": 2,
+   "technical": 0,
+   "unclear": 1,
+   "unique_problems": 1
+  },
+  "technical": {
+   "ads": 0,
+   "autopay": 0,
+   "other": 0,
+   "praise": 0,
+   "quality": 0,
+   "suggestion": 0,
+   "technical": 1,
+   "unclear": 2,
+   "unique_problems": 1
+  },
+  "unclear": {
+   "ads": 0,
+   "autopay": 0,
+   "other": 0,
+   "praise": 1,
+   "quality": 0,
+   "suggestion": 0,
+   "technical": 0,
+   "unclear": 8,
+   "unique_problems": 0
+  }
+ },
+ "disagreements": [
+  {
+   "review_id": "26b6b474-d70e-4415-943b-42bd185e55c0",
+   "app": "Kuku TV",
+   "rating": 1,
+   "text": "एक एपिसोड का समय कम है।कम से कम 10मिनट होना चाहिए",
+   "my_topic": "other",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.8,
+   "ai_reason": "Requests that episodes be at least 10 minutes long, a suggestion for improvement."
+  },
+  {
+   "review_id": "4b88bbaf-c5f3-4584-b7ab-5e2199695ed4",
+   "app": "Kuku FM",
+   "rating": 1,
+   "text": "unable to install the app.",
+   "my_topic": "unclear",
+   "final_topic": "technical",
+   "ai_topic": "technical",
+   "ai_confidence": 0.8,
+   "ai_reason": "User cannot install the app, a technical problem."
+  },
+  {
+   "review_id": "d5341529-0fe5-4bff-bb85-14bd16f69c15",
+   "app": "Kuku TV",
+   "rating": 4,
+   "text": "So many types of stories in one place.",
+   "my_topic": "unique_problems",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.7,
+   "ai_reason": "Positive remark about variety of stories."
+  },
+  {
+   "review_id": "e22d5f4a-8438-402a-82fb-57a72f091d2c",
+   "app": "Kuku FM",
+   "rating": 4,
+   "text": "kuku fm is a very good platform. The subscription charge of the platform is extremely high and many common audiences are struggling with it. 699 would be very useful if the three month period is 6 months or even 5 months is enough. If this subscription pricing remains unchanged, subscriptions and downloads of your app will decrease in the coming years. Surely this should be taken as a warning ⚠️ ⚠️",
+   "my_topic": "praise",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.6,
+   "ai_reason": "Asks for lower or longer-period subscription pricing; a request rather than a specific money error, though price is a concern."
+  },
+  {
+   "review_id": "54ce4a87-a5b0-416f-86c6-4a4625701e6d",
+   "app": "Kuku FM",
+   "rating": 5,
+   "text": "good radio FM radio kuku.",
+   "my_topic": "praise",
+   "final_topic": "unclear",
+   "ai_topic": "praise",
+   "ai_confidence": 0.45,
+   "ai_reason": "Positive remark ('good') mentioning radio; mostly praise."
+  },
+  {
+   "review_id": "6cfbb88a-7bf9-4fd6-90b6-54b7b0546660",
+   "app": "Kuku TV",
+   "rating": 2,
+   "text": "Few Stories are Incomplete.. after substitution.. it's incomplete",
+   "my_topic": "unique_problems",
+   "final_topic": "quality",
+   "ai_topic": "quality",
+   "ai_confidence": 0.85,
+   "ai_reason": "Stories are incomplete after the novel's final part is missing."
+  },
+  {
+   "review_id": "157fe434-73d5-4fc9-8b2d-eb780a01c601",
+   "app": "Kuku FM",
+   "rating": 2,
+   "text": "we want videos",
+   "my_topic": "unclear",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.6,
+   "ai_reason": "Request for more videos, phrased as a wish rather than a problem."
+  },
+  {
+   "review_id": "6591d571-dceb-4111-b6d4-920cf9f6032c",
+   "app": "Kuku TV",
+   "rating": 3,
+   "text": "kuku tv installed day before yesterday. but not opened. kindly guide me",
+   "my_topic": "unclear",
+   "final_topic": "technical",
+   "ai_topic": "technical",
+   "ai_confidence": 0.8,
+   "ai_reason": "User installed the app but it will not open; needs help getting it working."
+  },
+  {
+   "review_id": "5bace070-916e-45d3-966e-39c442430a96",
+   "app": "Kuku FM",
+   "rating": 2,
+   "text": "💐 ❤️❤️💐",
+   "my_topic": "unclear",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.6,
+   "ai_reason": "Only hearts and flower emojis, positive sentiment with no complaint."
+  },
+  {
+   "review_id": "0cea9ce4-95fd-46eb-8de0-eaa9c26051a2",
+   "app": "Kuku FM",
+   "rating": 3,
+   "text": "bring option to seperate story novels and other books, there should be a toggle for that..its so annoying to see a lot of such books while im looking for the other",
+   "my_topic": "unique_problems",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.9,
+   "ai_reason": "Asks for a toggle to separate story novels from other books."
+  },
+  {
+   "review_id": "7e846b45-97da-4d62-8d5f-3c5a24282d2d",
+   "app": "Kuku TV",
+   "rating": 3,
+   "text": "Not working properly... Stop after 4 5 episodes..do something immediately.",
+   "my_topic": "unique_problems",
+   "final_topic": "technical",
+   "ai_topic": "technical",
+   "ai_confidence": 0.85,
+   "ai_reason": "App stops playing after 4-5 episodes, a playback malfunction."
+  },
+  {
+   "review_id": "32edc9e2-7fda-4b04-9d4a-825a11c81a6a",
+   "app": "Kuku TV",
+   "rating": 4,
+   "text": "you will improve content experience. reduce the ads. it's good for mei will recommend my friends.",
+   "my_topic": "suggestion",
+   "final_topic": "ads",
+   "ai_topic": "ads",
+   "ai_confidence": 0.7,
+   "ai_reason": "Main request is to reduce ads; also mild praise and recommendation."
+  }
+ ],
+ "all_predictions": [
+  {
+   "review_id": "25aa8951-2361-4197-aa75-ea889ee653ec",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.85,
+   "ai_reason": "Generic positive remark ('nice mast') with no complaint."
+  },
+  {
+   "review_id": "26b6b474-d70e-4415-943b-42bd185e55c0",
+   "my_topic": "other",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.8,
+   "ai_reason": "Requests that episodes be at least 10 minutes long, a suggestion for improvement."
+  },
+  {
+   "review_id": "c3229d22-a0ed-45ca-89e1-4513015088c1",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.75,
+   "ai_reason": "Complaint that payment was more than expected, a money issue."
+  },
+  {
+   "review_id": "b29593b0-51ee-4408-be8c-5bf746cedd2d",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.95,
+   "ai_reason": "Positive review praising the app."
+  },
+  {
+   "review_id": "424b6165-d18a-497a-b8b4-8a394dc0fc36",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.95,
+   "ai_reason": "Positive review saying the app is very nice."
+  },
+  {
+   "review_id": "bd117fed-6b44-4695-9276-0a36335ccc03",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.9,
+   "ai_reason": "User was charged 699 without choosing, and warns others off the app; money loss is the main complaint."
+  },
+  {
+   "review_id": "e04fb9fe-d65a-4024-87c3-4601d435d532",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.95,
+   "ai_reason": "Positive review saying the app is very good."
+  },
+  {
+   "review_id": "f943c8fe-8698-47d6-9d3c-7d5b0069edcd",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.95,
+   "ai_reason": "Positive review saying good app."
+  },
+  {
+   "review_id": "642da2de-7543-42d4-9690-47bf72b8b067",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.9,
+   "ai_reason": "Positive remark calling the app best."
+  },
+  {
+   "review_id": "cb8dd98b-db80-4c2c-99e3-ca0cb2e80c53",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.95,
+   "ai_reason": "Positive review praising show quality."
+  },
+  {
+   "review_id": "e14895fa-4d9e-402b-bf1d-3574b9897156",
+   "my_topic": "suggestion",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.85,
+   "ai_reason": "Suggests offering a free drama trial before charging money."
+  },
+  {
+   "review_id": "ff54f6f7-25ea-43a7-acdd-fae8200263cd",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.8,
+   "ai_reason": "Amount debited automatically and refund not given; money loss is the main complaint."
+  },
+  {
+   "review_id": "cf22f623-a195-4a73-944d-d47ba8146a6b",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.75,
+   "ai_reason": "Positive remark that there is always something new to watch."
+  },
+  {
+   "review_id": "537601b4-41eb-4016-9263-8fcd570cde45",
+   "my_topic": "quality",
+   "final_topic": "quality",
+   "ai_topic": "quality",
+   "ai_confidence": 0.8,
+   "ai_reason": "Story ending was not completed as expected; user also questions the money paid, but the unfinished story is the main issue."
+  },
+  {
+   "review_id": "57b093cc-043b-45a4-a590-2c1de5d1c2b9",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.9,
+   "ai_reason": "Money deducted without permission and user asks for a refund."
+  },
+  {
+   "review_id": "4841b412-51a7-498b-9ade-c2559c3ea405",
+   "my_topic": "technical",
+   "final_topic": "technical",
+   "ai_topic": "technical",
+   "ai_confidence": 0.9,
+   "ai_reason": "Videos not playing properly, a playback problem."
+  },
+  {
+   "review_id": "ad57637c-0413-4149-b289-8d0c0ec37902",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.9,
+   "ai_reason": "Charged 699 automatically after a 1 rupee trial; money loss is the main complaint."
+  },
+  {
+   "review_id": "dccccf68-2ff9-4cde-b4ce-7416c7e454f2",
+   "my_topic": "unclear",
+   "final_topic": "unclear",
+   "ai_topic": "unclear",
+   "ai_confidence": 0.6,
+   "ai_reason": "Vague negative remark ('bakvas hai') with no specific reason."
+  },
+  {
+   "review_id": "4b88bbaf-c5f3-4584-b7ab-5e2199695ed4",
+   "my_topic": "unclear",
+   "final_topic": "technical",
+   "ai_topic": "technical",
+   "ai_confidence": 0.8,
+   "ai_reason": "User cannot install the app, a technical problem."
+  },
+  {
+   "review_id": "d9c87b64-0475-4673-9110-ad09944dc090",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.95,
+   "ai_reason": "Autopay enabled without consent and 699 rupees taken; money loss is the main complaint."
+  },
+  {
+   "review_id": "836abed8-66b7-4676-970c-0b74ce90c3a7",
+   "my_topic": "unclear",
+   "final_topic": "unclear",
+   "ai_topic": "unclear",
+   "ai_confidence": 0.6,
+   "ai_reason": "Vague negative remark with no stated reason."
+  },
+  {
+   "review_id": "c45d584f-c623-49fc-91a1-2152093ca258",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.6,
+   "ai_reason": "Says they enjoy vertical dramas; positive with no complaint."
+  },
+  {
+   "review_id": "75089511-2fc0-40cc-9480-c85efb3a2ec4",
+   "my_topic": "unclear",
+   "final_topic": "unclear",
+   "ai_topic": "unclear",
+   "ai_confidence": 0.4,
+   "ai_reason": "Hinglish phrase meaning unclear; possibly a display issue but not certain."
+  },
+  {
+   "review_id": "15f201da-fb24-45e5-b1e3-aa63c960214f",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.95,
+   "ai_reason": "Money deducted automatically without auto-pay consent and refund refused."
+  },
+  {
+   "review_id": "d5341529-0fe5-4bff-bb85-14bd16f69c15",
+   "my_topic": "unique_problems",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.7,
+   "ai_reason": "Positive remark about variety of stories."
+  },
+  {
+   "review_id": "200236df-01c9-486d-875a-583cdb56b024",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.6,
+   "ai_reason": "Simple positive expression of liking the app."
+  },
+  {
+   "review_id": "e22d5f4a-8438-402a-82fb-57a72f091d2c",
+   "my_topic": "praise",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.6,
+   "ai_reason": "Asks for lower or longer-period subscription pricing; a request rather than a specific money error, though price is a concern."
+  },
+  {
+   "review_id": "54ce4a87-a5b0-416f-86c6-4a4625701e6d",
+   "my_topic": "praise",
+   "final_topic": "unclear",
+   "ai_topic": "praise",
+   "ai_confidence": 0.45,
+   "ai_reason": "Positive remark ('good') mentioning radio; mostly praise."
+  },
+  {
+   "review_id": "fbe391fb-1fa7-4b4e-9ca5-e1cda0c4d322",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.95,
+   "ai_reason": "Clear praise for the app."
+  },
+  {
+   "review_id": "4b34fb12-1ae8-44ba-ad0d-38706c0527f7",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.9,
+   "ai_reason": "User wants automatic payments stopped and cancelled."
+  },
+  {
+   "review_id": "17a27427-e6c4-4440-85c7-4df73d877c53",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.95,
+   "ai_reason": "Rs 699 deducted without notice after trial, subscription not wanted."
+  },
+  {
+   "review_id": "6220941b-429e-49bf-b92c-a708fe7b29ff",
+   "my_topic": "unclear",
+   "final_topic": "unclear",
+   "ai_topic": "technical",
+   "ai_confidence": 0.5,
+   "ai_reason": "Complaint about device compatibility, meaning the app does not work on their phone."
+  },
+  {
+   "review_id": "af285c1a-6382-4cbd-af10-49995660c7e6",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.8,
+   "ai_reason": "Amount deducted for premium without notification is the main complaint."
+  },
+  {
+   "review_id": "42024624-da9c-479a-8170-fdefbc722bf7",
+   "my_topic": "unclear",
+   "final_topic": "unclear",
+   "ai_topic": "unclear",
+   "ai_confidence": 0.4,
+   "ai_reason": "Unclear phrase; possibly a complaint about a missing west/regional app."
+  },
+  {
+   "review_id": "6cfbb88a-7bf9-4fd6-90b6-54b7b0546660",
+   "my_topic": "unique_problems",
+   "final_topic": "quality",
+   "ai_topic": "quality",
+   "ai_confidence": 0.85,
+   "ai_reason": "Stories are incomplete after the novel's final part is missing."
+  },
+  {
+   "review_id": "278f5d19-e6f6-401f-93a8-b9534d329e09",
+   "my_topic": "ads",
+   "final_topic": "ads",
+   "ai_topic": "ads",
+   "ai_confidence": 0.8,
+   "ai_reason": "Complains that ads are disturbing for a premium subscriber."
+  },
+  {
+   "review_id": "589823fd-e25e-4d4f-a9c0-5ab13e7ded99",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.9,
+   "ai_reason": "Positive review saying the app is good and easy to watch."
+  },
+  {
+   "review_id": "3ebacf39-8f32-4c7a-9802-04095b9882a2",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.6,
+   "ai_reason": "Mild positive remark ('ok good')."
+  },
+  {
+   "review_id": "62268255-86bc-4690-8e99-5dea9f51ab77",
+   "my_topic": "ads",
+   "final_topic": "ads",
+   "ai_topic": "ads",
+   "ai_confidence": 0.9,
+   "ai_reason": "Complains about too many advertisements interrupting viewing."
+  },
+  {
+   "review_id": "6cc5eca2-a8bf-477d-a038-a7b695c55425",
+   "my_topic": "ads",
+   "final_topic": "ads",
+   "ai_topic": "ads",
+   "ai_confidence": 0.95,
+   "ai_reason": "Too much advertisement played over all shows."
+  },
+  {
+   "review_id": "157fe434-73d5-4fc9-8b2d-eb780a01c601",
+   "my_topic": "unclear",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.6,
+   "ai_reason": "Request for more videos, phrased as a wish rather than a problem."
+  },
+  {
+   "review_id": "517f2732-73dc-4569-b53d-3edb5856636d",
+   "my_topic": "ads",
+   "final_topic": "ads",
+   "ai_topic": "ads",
+   "ai_confidence": 0.9,
+   "ai_reason": "'adds' means ads; user wants no ads."
+  },
+  {
+   "review_id": "6591d571-dceb-4111-b6d4-920cf9f6032c",
+   "my_topic": "unclear",
+   "final_topic": "technical",
+   "ai_topic": "technical",
+   "ai_confidence": 0.8,
+   "ai_reason": "User installed the app but it will not open; needs help getting it working."
+  },
+  {
+   "review_id": "5bace070-916e-45d3-966e-39c442430a96",
+   "my_topic": "unclear",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.6,
+   "ai_reason": "Only hearts and flower emojis, positive sentiment with no complaint."
+  },
+  {
+   "review_id": "0cea9ce4-95fd-46eb-8de0-eaa9c26051a2",
+   "my_topic": "unique_problems",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.9,
+   "ai_reason": "Asks for a toggle to separate story novels from other books."
+  },
+  {
+   "review_id": "ce5b1d78-1ea3-40bc-baa5-9923ece85726",
+   "my_topic": "unclear",
+   "final_topic": "unclear",
+   "ai_topic": "unclear",
+   "ai_confidence": 0.8,
+   "ai_reason": "Only a greeting with no complaint or praise."
+  },
+  {
+   "review_id": "02567583-6ea3-4759-8ab9-616e182538ac",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.9,
+   "ai_reason": "Positive review calling it a good app for short drama videos."
+  },
+  {
+   "review_id": "7e846b45-97da-4d62-8d5f-3c5a24282d2d",
+   "my_topic": "unique_problems",
+   "final_topic": "technical",
+   "ai_topic": "technical",
+   "ai_confidence": 0.85,
+   "ai_reason": "App stops playing after 4-5 episodes, a playback malfunction."
+  },
+  {
+   "review_id": "3d3d3afc-0299-4422-9191-a9d8376ff389",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.8,
+   "ai_reason": "Simple thank you with no complaint."
+  },
+  {
+   "review_id": "40a1a04e-b764-42dc-83d4-4fcc741e1cbb",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.95,
+   "ai_reason": "Rs 699 deducted via autopay without use; user wants a refund."
+  },
+  {
+   "review_id": "64e75f8c-bfc8-4a47-8b09-4d2b6191baee",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.85,
+   "ai_reason": "Simple positive remark about the app."
+  },
+  {
+   "review_id": "9b9f0f65-63ef-440c-b64e-609fca14b724",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.95,
+   "ai_reason": "Positive review praising quality, variety and format."
+  },
+  {
+   "review_id": "0e2de25a-2ff7-4571-8740-0bbff8f46140",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.8,
+   "ai_reason": "Says all good with a thumbs up."
+  },
+  {
+   "review_id": "5cfd02e4-04d6-4930-a6e6-f0d58576b194",
+   "my_topic": "autopay",
+   "final_topic": "autopay",
+   "ai_topic": "autopay",
+   "ai_confidence": 0.6,
+   "ai_reason": "Complains the premium amount is very heavy, a price and money complaint."
+  },
+  {
+   "review_id": "32edc9e2-7fda-4b04-9d4a-825a11c81a6a",
+   "my_topic": "suggestion",
+   "final_topic": "ads",
+   "ai_topic": "ads",
+   "ai_confidence": 0.7,
+   "ai_reason": "Main request is to reduce ads; also mild praise and recommendation."
+  },
+  {
+   "review_id": "5e9654ce-3663-4af1-ae35-0beae7ab73d3",
+   "my_topic": "suggestion",
+   "final_topic": "suggestion",
+   "ai_topic": "suggestion",
+   "ai_confidence": 0.85,
+   "ai_reason": "Requests a specific type of short series; praises the app."
+  },
+  {
+   "review_id": "98d7a0a5-b0a8-4e27-94c1-e319dee76f95",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.95,
+   "ai_reason": "Positive review about binge-worthy dramas and clean design."
+  },
+  {
+   "review_id": "2362839c-38fb-4a2a-8815-4cc110c1fed4",
+   "my_topic": "praise",
+   "final_topic": "praise",
+   "ai_topic": "praise",
+   "ai_confidence": 0.9,
+   "ai_reason": "Positive compliment on the app."
+  },
+  {
+   "review_id": "dfbb9a67-6f18-4461-af25-da69511bb78e",
+   "my_topic": "unclear",
+   "final_topic": "unclear",
+   "ai_topic": "unclear",
+   "ai_confidence": 0.7,
+   "ai_reason": "Vague remark with no clear complaint or praise."
+  },
+  {
+   "review_id": "56a1104a-7bbb-4124-9d4b-1a1715e2e565",
+   "my_topic": "unclear",
+   "final_topic": "unclear",
+   "ai_topic": "unclear",
+   "ai_confidence": 0.4,
+   "ai_reason": "Text is garbled; meaning cannot be determined."
+  }
+ ]
+}

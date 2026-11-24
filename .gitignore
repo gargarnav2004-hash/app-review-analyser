@@ -1,0 +1,14 @@
+# secrets — never upload
+.env
+
+# local environment and caches
+venv/
+__pycache__/
+data/cache/
+data/classify_failures.log
+
+# Claude Code local settings
+.claude/
+
+# Mac clutter
+.DS_Store

@@ -1,0 +1,142 @@
+# taxonomy.yaml — Arnav's topic definitions and severity rules.
+# The classifier builds its prompt directly from this file.
+# Edit this file -> the AI's behaviour changes. (CHECKPOINTS B & C)
+#
+# WHO WROTE WHAT
+#   Arnav:  the topic list, the contents of autopay (renamed from money) / technical / unique_problems / quality,
+#           the decisions to split out customer_support, ads and language, the login rule,
+#           and the severity rules.
+#   Claude (at Arnav's request, "rest i am leaving upto you"): wording of praise, ads,
+#           customer_support, language, other, unclear, and the boundary rules.
+#           Arnav to review and edit anything he disagrees with.
+
+version: v1
+
+topics:
+  autopay:
+    definition: >
+      Money related. Includes: after purchasing subscription, if someone wants to cancel
+      before the trial period ends they are finding it difficult and their entire money is
+      being deducted; people finding it hard to cancel subscription; paid money but
+      subscription not activated (paise bhare par subscription activate nhi hua);
+      subscription auto renew; plan cancelled within 3 days should auto refund but they
+      did not refund; Rs 1 trial pack then automatically 699 deducted even after cancelling
+      during trial period; no pre-debit notification.
+    examples: []
+    boundary: >
+      Payment done but not able to login = technical (Arnav's rule), not autopay.
+      If a review is about autopay or other money loss AND says customer support did not help, choose autopay
+      (the money problem is the root cause).
+
+  technical:
+    definition: >
+      Technical issue. Includes: app not opening (app open nhi ho raha); audio keeps playing
+      when video is selected; technical glitches; payment done but not able to login.
+    examples: []
+    boundary: >
+      Crashes, loading, login, playback and other things that are broken in the app belong
+      here, even if the user also mentions they paid.
+
+  unique_problems:
+    definition: >
+      Unique problems. Includes: took Kuku TV subscription and it was changed to Kuku FM on
+      its own (Kuku TV ka subscription liya aur Kuku FM kar diya apne aap); no free episodes.
+    examples: []
+    boundary: >
+      Complaints that the app should be free, or that episodes are locked behind payment
+      without any wrong charge mentioned, belong here ("no free episodes"). If money was
+      actually deducted, refunded or auto-renewed, it is autopay instead.
+
+  quality:
+    definition: >
+      Quality. Includes: audio is AI generated; ragebait content, idiotic plot; in audio
+      stories adapted from long novels, the last part of the novel was not included so the
+      story was not finished.
+    examples: []
+    boundary: >
+      Requests for the next season or the rest of a story count as quality (unfinished
+      story). A complaint that just says "not good" with no reason is unclear, not quality.
+
+  customer_support:
+    definition: >
+      Complaints about customer support: no reply, unhelpful replies, no way to contact
+      anyone, support not solving the problem.
+    examples: []
+    boundary: >
+      Only when support itself is the main complaint. If the user lost money and support
+      did not help, choose autopay.
+
+  ads:
+    definition: >
+      Complaints about advertisements in the app: too many ads, ads interrupting episodes
+      or stories, unskippable ads. Note: users often write "add" or "adds" to mean ads.
+    examples: []
+    boundary: >
+      "add bht zyada hai" means too many ads, not a price complaint.
+
+  language:
+    definition: >
+      Complaints about language: content not available in the user's language, poor
+      dubbing or translation, wanting a specific language (e.g. Hindi, Tamil, Telugu).
+    examples: []
+    boundary: >
+      Only when the complaint is about the language of the content or app. A review simply
+      written in Hindi or another language is NOT a language complaint.
+
+  suggestion:   # Topic added by Arnav after labelling; wording drafted by Claude
+    definition: >
+      Ideas or requests for how the app could be better, written as a suggestion rather than
+      as a report of something that went wrong: "you should...", "please add...", "bring an
+      option to...", "make more ... shows", "reduce ...".
+    examples: []
+    boundary: >
+      If the user describes a problem that actually happened to them (money deducted, app
+      crashed, story stopped), classify by that problem instead. A suggestion that comes
+      with praise ("great app but please add X") is still a suggestion.
+
+  praise:
+    definition: >
+      Positive reviews with no complaint: the user likes the app, the stories or the shows
+      (e.g. "nice app", "good show", "acha hai").
+    examples: []
+    boundary: >
+      If a review praises the app but also describes a problem, classify it by the problem.
+
+  other:
+    definition: >
+      A clear complaint that does not fit any topic above.
+    examples: []
+    boundary: >
+      Use only when the meaning is clear but no topic fits. If the meaning is not clear,
+      use unclear.
+
+  unclear:
+    definition: >
+      You cannot tell what the user means, or the review has no clear complaint or praise:
+      random words, a person's name, very vague negative remarks like "not good" with no
+      reason, or text you cannot understand.
+    examples: []
+    boundary: >
+      Prefer unclear over guessing.
+
+# Rule for reviews with more than one complaint (Claude's draft, Arnav to review)
+multiple_complaints_rule: >
+  If a review contains two or more complaints, choose the one the user is most upset about
+  (usually the one they write the most about).
+
+# ---- Severity (CHECKPOINT C) — Arnav's rule ----
+# Severity is fixed by topic, NOT judged review by review:
+#   payment-related issues (autopay) = 3, technical = 2, the rest = 1, praise = no severity.
+# other and unclear: Arnav said "do not consider" -> no severity, left out of rankings.
+severity_by_topic:
+  autopay: 3
+  technical: 2
+  unique_problems: 1
+  quality: 1
+  customer_support: 1
+  ads: 1
+  language: 1
+  suggestion: 1
+  praise: null
+  other: null
+  unclear: null
